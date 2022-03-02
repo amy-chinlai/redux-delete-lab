@@ -3,7 +3,9 @@ export default function manageBand(state = {
 }, action) {
   switch(action.type) {
     case "ADD_BAND":
-      return {...state, bands: state.bands.concat(action.name)}
+      const combined = Object.assign(state, { name: action.name} )
+      console.log(combined)
+      return {...state, bands: [...state.bands, combined] }
     default:
       return state
   

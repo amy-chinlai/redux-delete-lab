@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 class BandsContainer extends Component {
   render() {
     console.log("below")
-    console.log(this.props)
+    console.log(this.props.bands)
     return(
       <ul>
         <BandInput addBand={this.props.addBand}/>

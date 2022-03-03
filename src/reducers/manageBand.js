@@ -8,8 +8,9 @@ export default function manageBand(state = {
 
     case "DELETE_BAND":
       console.log("payload below")
-      console.log(action.payload)
-      const bands = state.bands.filter((band) => band.id !== action.payload)
+      console.log(action)
+      const bands = state.bands.filter((band) => band.id !== action.id)
+      console.log(bands)
       return { bands }
     default:
       return state

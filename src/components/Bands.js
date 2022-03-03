@@ -3,15 +3,19 @@ import Band from "./Band"
 import { connect } from 'react-redux'
 
 const Bands = props => {
-    console.log("props below")
-    console.log(props.bands)
-    const bands = props.bands.map(band => <Band key={band.id} name={band.name} />)
-
+    if (props.bands != undefined) {
+        const bands = props.bands.map(band => <Band id={band.id} name={band.name} deleteBand={props.deleteBand}/>)
     return (
         <div>
-            {/* {bands} */}
+            {bands}
         </div>
     )
+}
+else {
+    return (
+        <div>nothing here!</div>
+    )
+}
 }
 
 export default Bands

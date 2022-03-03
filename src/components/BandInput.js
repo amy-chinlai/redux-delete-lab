@@ -13,14 +13,11 @@ class BandInput extends Component {
 
   handleOnSubmit = (event) => {   
     event.preventDefault();
-    console.log("newer")
     this.props.addBand(this.state.name);
-    console.log(this.state)
     this.setState({ name: '' })
   }
 
   render() {
-    console.log("new")
     return(
       <div>
         <form onSubmit={this.handleOnSubmit}>

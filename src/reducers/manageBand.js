@@ -3,9 +3,14 @@ export default function manageBand(state = {
 }, action) {
   switch(action.type) {
     case "ADD_BAND":
-      const combined = Object.assign(state, { name: action.name} )
-      console.log(combined)
-      return {...state, bands: [...state.bands, combined] }
+      const band = { id: Math.random(), name: action.name }
+      return {...state, bands: [...state.bands, band] }
+
+    case "DELETE_BAND":
+      console.log("payload below")
+      console.log(action.payload)
+      const bands = state.bands.filter((band) => band.id !== action.payload)
+      return { bands }
     default:
       return state
   
